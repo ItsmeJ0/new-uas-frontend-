@@ -26,7 +26,7 @@ const App = () => {
 
   useEffect(() => {
     const connectWebSocket = () => {
-      const socket = new WebSocket('ws://localhost:3001/ws');
+      const socket = new WebSocket('wss://uas-backend-production.up.railway.app/ws');
   
       socket.onopen = () => {
         console.log('WebSocket connection established');
