@@ -6,7 +6,7 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 
 const App = () => {
-  const baseURL = 'uas-backend-production.up.railway.app'; // URL backend
+  const baseURL = 'uas-backend-production.up.railway.app:3001'; // URL backend
   const [currentPage, setCurrentPage] = useState('login'); // Halaman aktif
   const [isAuthenticated, setIsAuthenticated] = useState(false); // Status login
   const [books, setBooks] = useState([]);
