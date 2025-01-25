@@ -317,6 +317,8 @@ const App = () => {
                 <th>Penulis</th>
                 <th>Tahun</th>
                 <th>Genre</th>
+                <th>Halaman</th>
+                <th>Penerbit</th>
                 <th>Aksi</th>
               </tr>
             </thead>
