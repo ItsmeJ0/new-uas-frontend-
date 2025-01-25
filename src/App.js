@@ -55,8 +55,6 @@ const App = () => {
     };
   }, [ws]);
   
-
-
   // Handle add announcement
   const handleAddAnnouncement = async (e) => {
     e.preventDefault();
@@ -124,7 +122,7 @@ const App = () => {
         },
       });
       setBooks(response.data);
-      setNewBook({ title: '', author: '', year: '', genre: '' });
+      setNewBook({ title: '', author: '', year: '', genre: '', penerbit: '', halaman: '' });
       alert('Buku berhasil ditambahkan!');
     } catch (error) {
       console.error('Error adding book:', error);
@@ -249,6 +247,28 @@ const App = () => {
                 required
               />
             </div>
+            <div className="mb-3">
+              <label htmlFor="penerbit" className="form-label">Penerbit</label>
+              <input
+                type="text"
+                id="penerbit"
+                className="form-control"
+                value={newBook.penerbit}
+                onChange={(e) => setNewBook({ ...newBook, penerbit: e.target.value })}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="halaman" className="form-label">Halaman</label>
+              <input
+                type="text"
+                id="halaman"
+                className="form-control"
+                value={newBook.halaman}
+                onChange={(e) => setNewBook({ ...newBook, halaman: e.target.value })}
+                required
+              />
+            </div>
             <button type="submit" className="btn btn-primary">Tambah Buku</button>
           </form>
 
@@ -308,6 +328,8 @@ const App = () => {
                   <td>{book.author}</td>
                   <td>{book.year}</td>
                   <td>{book.genre}</td>
+                  <td>{book.penerbit}</td>
+                  <td>{book.halaman}</td>
                   <td>
                     <button
                       className="btn btn-warning btn-sm"
