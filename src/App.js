@@ -122,7 +122,7 @@ const App = () => {
         },
       });
       setBooks(response.data);
-      setNewBook({ title: '', author: '', year: '', genre: '', penerbit: '', halaman: '' });
+      setNewBook({ title: '', author: '', year: '', genre: ''});
       alert('Buku berhasil ditambahkan!');
     } catch (error) {
       console.error('Error adding book:', error);
@@ -244,28 +244,6 @@ const App = () => {
                 className="form-control"
                 value={newBook.genre}
                 onChange={(e) => setNewBook({ ...newBook, genre: e.target.value })}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="penerbit" className="form-label">Penerbit</label>
-              <input
-                type="text"
-                id="penerbit"
-                className="form-control"
-                value={newBook.penerbit}
-                onChange={(e) => setNewBook({ ...newBook, penerbit: e.target.value })}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="halaman" className="form-label">Halaman</label>
-              <input
-                type="text"
-                id="halaman"
-                className="form-control"
-                value={newBook.halaman}
-                onChange={(e) => setNewBook({ ...newBook, halaman: e.target.value })}
                 required
               />
             </div>

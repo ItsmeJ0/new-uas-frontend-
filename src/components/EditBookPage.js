@@ -86,26 +86,6 @@ const EditBookPage = ({ bookId, navigateTo, baseURL }) => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="mb-3">
-        <label htmlFor="penerbit" className="form-label">Penerbit</label>
-        <input
-          type="text"
-          id="penerbit"
-          className="form-control"
-          value={book.penerbit}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="halaman" className="form-label">Halaman</label>
-        <input
-          type="text"
-          id="halaman"
-          className="form-control"
-          value={book.halaman}
-          onChange={handleInputChange}
-        />
-      </div>
       <button type="submit" className="btn btn-success">Simpan</button>
       <button
         type="button"
