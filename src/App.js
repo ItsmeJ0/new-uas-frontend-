@@ -27,12 +27,12 @@ const App = () => {
   useEffect(() => {
     const connectWebSocket = () => {
       const socket = new WebSocket('wss://uas-backend-production.up.railway.app/ws');
-  
+
       socket.onopen = () => {
         console.log('WebSocket connection established');
         setWs(socket); // Simpan koneksi di state
       };
-  
+
       socket.onmessage = (event) => {
         console.log('Received message:', event.data);
         setAnnouncements((prevAnnouncements) => [
@@ -40,21 +40,21 @@ const App = () => {
           event.data,
         ]);
       };
-  
+
       socket.onclose = (event) => {
         console.log('WebSocket connection closed:', event);
       };
-  
+
       return socket;
     };
-  
+
     const socket = connectWebSocket();
-  
+
     return () => {
       socket.close(); // Tutup WebSocket ketika komponen dibongkar
     };
   }, [ws]);
-  
+
   // Handle add announcement
   const handleAddAnnouncement = async (e) => {
     e.preventDefault();
@@ -147,12 +147,12 @@ const App = () => {
     }
   };
 
-   // Navigasi antar halaman
-   const navigateTo = (page, bookId = null) => {
+  // Navigasi antar halaman
+  const navigateTo = (page, bookId = null) => {
     setCurrentPage(page);
     setEditBookId(bookId);
   };
-  
+
   // Handle login
   const handleLogin = async (email, password) => {
     try {
