@@ -6,7 +6,8 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 
 const App = () => {
-  const baseURL = 'https://uas-backend-production.up.railway.app'; // URL backend
+  // const baseURL = 'https://uas-backend-production.up.railway.app'; // URL backend
+  const baseURL = 'http://localhost:3001'; // URL backend
   const [currentPage, setCurrentPage] = useState('login'); // Halaman aktif
   const [isAuthenticated, setIsAuthenticated] = useState(false); // Status login
   const [books, setBooks] = useState([]);
@@ -26,7 +27,7 @@ const App = () => {
 
   useEffect(() => {
     const connectWebSocket = () => {
-      const socket = new WebSocket('wss://uas-backend-production.up.railway.app/ws');
+      const socket = new WebSocket('wss:http://localhost:3001/ws');
 
       socket.onopen = () => {
         console.log('WebSocket connection established');
